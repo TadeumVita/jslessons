@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .header{
+            background-color: lightblue;
+            padding: 20px;
+            text-align: center;
+            color: rgb(2, 2, 7);        
+            }
+        .flex-buttons {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 30px;
+            }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Chorha Marianna</h1>
+        <h2 id='answer'></h2>
+    </div>
+    <div class="flex-buttons">
+        <button id="dish">Favorite dish</button>
+        <button id="alcodrink">Favorite alcoholic drink</button>
+        <button id="nonalcodrink">Favorite soft drink</button>
+    </div>
+
+    <script>
+        let answer = document.getElementById('answer');
+
+        let dish = document.getElementById('dish');
+        dish.addEventListener('click', function (){
+            answer.innerText = 'Fried meat';
+        })
+        let alcodrink = document.getElementById('alcodrink');
+        alcodrink.addEventListener('click', function (){
+            answer.innerText = 'Whiskey with cola';
+        })
+        let nonalcodrink = document.getElementById('nonalcodrink');
+        nonalcodrink.addEventListener('click', function (){
+            answer.innerText = 'Pure water';
+        })
+
+        let name = document.querySelector("h1")
+        name.addEventListener('click', function (){
+            alert('\\Chorna\\\n"Marianna"\n\u2735+380937419706\n\uD83D\uDE00 Odessa')
+        })
+
+    </script>
+</body>
+</html>
