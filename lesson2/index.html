@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .header{
+            background-color: red;
+            padding: 20px;
+            text-align: center;
+            color: rgb(2, 2, 7);        
+            }
+        .flex-buttons {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 30px;
+            }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Funeral agency services</h1>
+    </div>
+    <div class="flex-buttons">
+        <button id="AVG">Average</button>
+        <button id="Pow3">Power</button>
+        <button id="CircleArea">Circle area</button>
+        <button id="Rate">Exchange rates</button>
+        <button id="MilesConv">Miles converter</button>
+        <button id="MoneyCalc">Money calculator</button>
+        <button id="SwichNumber">Swich second symbols in number</button>
+        <button id="BullyingNumber">Bullying a 4-digit number</button>
+        <button id="RemoveDigit">Remove the 2-nd digit from a 3-digit number</button>
+        <button id="FlipNumber">Flip the number</button>
+    </div>
+
+    <script>
+        let avg = document.getElementById('AVG');
+        avg.addEventListener('click', function (){
+            let number1 =  prompt('Enter first number');
+            let number2 = prompt('Enter second number');
+            alert(`avg = ` + ((parseFloat(number1) + parseFloat(number2)) / 2))
+        })
+
+        let pow = document.getElementById('Pow3');
+        pow.addEventListener('click', function (){
+            let number =  prompt('Enter number');
+            alert('power = ' + parseFloat(number)**3)
+        })
+
+        let area = document.getElementById('CircleArea');
+        area.addEventListener('click', function (){
+            let radius =  prompt('Enter radius');
+            const PI = 3.14
+            alert("area of this circle = " + (parseFloat(radius)**2 * PI))
+        })
+
+        let rate = document.getElementById('Rate');
+        rate.addEventListener('click', function (){
+            let money =  prompt('Enter USD quantity');
+            const CURENCY_RATE = 26.89
+            alert("money in  EUR = " + (parseFloat(money) * CURENCY_RATE))
+        })
+
+        let milesConv = document.getElementById('MilesConv');
+        milesConv.addEventListener('click', function (){
+            let miles =  prompt('Enter miles quantity');
+            const CONVERTOR_DATA = 1.609
+            alert("kilometers = " + (parseFloat(miles) * CONVERTOR_DATA))
+        })
+
+        let moneyCalc = document.getElementById('MoneyCalc');
+        moneyCalc.addEventListener('click', function (){
+            let sum = 0;
+
+            let question1 = prompt('Введите наминал банкноты:');
+            let answer1 = parseInt(question1);
+            let question2 = prompt('Введите количество банкнот:');
+            let answer2 = parseInt(question2);
+            sum = sum + answer1 * answer2
+            question1 = prompt('Введите наминал банкноты:');
+            answer1 = parseInt(question1);
+            question2 = prompt('Введите количество банкнот:');
+            answer2 = parseInt(question2);
+            sum = sum + answer1 * answer2
+            question1 = prompt('Введите наминал банкноты:');
+            answer1 = parseInt(question1);
+            question2 = prompt('Введите количество банкнот:');
+            answer2 = parseInt(question2);
+            sum = sum + answer1 * answer2
+            
+            alert('sum = ' + sum)
+        })
+
+        let swichNumber = document.getElementById('SwichNumber');
+        swichNumber.addEventListener('click', function (){
+            let number1 =   parseInt(prompt('Введите первое трехзначное число'));
+            let unit1 = number1 - parseInt(number1 / 10) * 10
+            let tenner1 = number1 - parseInt(number1 / 100) * 100 - unit1
+
+            let number2 =  parseInt(prompt('Введите второе трехзначное число'));
+            let unit2 = number2 - parseInt(number2 / 10) * 10
+            let tenner2 = number2 - parseInt(number2 / 100) * 100 - unit2
+
+            number1 = number1 -tenner1 + tenner2
+            number2 = number2 - tenner2 + tenner1
+            
+            alert('number1 = ' + number1 + ', number2 = ' + number2)
+        })
+
+        let bullyingNumber = document.getElementById('BullyingNumber');
+        bullyingNumber.addEventListener('click', function (){
+            let number =  prompt('Введите четырехзначное число');
+            let unit = number - parseInt(number / 10) * 10
+            let tenner = number - parseInt(number / 100) * 100 - unit
+            let hundred = number -  parseInt(number / 1000) * 1000 - tenner - unit
+            let thousand = number - hundred - tenner - unit
+
+            alert(`sum of first and third digit = ` + (thousand / 1000 + tenner / 10) + ` difference between the second and fourth digits = ` + (hundred / 100 - unit))
+        })
+
+        let removeDigit = document.getElementById('RemoveDigit');
+        removeDigit.addEventListener('click', function (){
+            let number =  prompt('Введите трехзначное число');
+            let unit = number - parseInt(number / 10) * 10
+            let tenner = number - parseInt(number / 100) * 100 - unit
+            let hundred = number -  parseInt(number / 1000) * 1000 - tenner - unit
+            alert("new number = " + (hundred / 10 + unit))
+        })
+
+        let flipNumber = document.getElementById('FlipNumber');
+        flipNumber.addEventListener('click', function (){
+            let number =  prompt('Введите трехзначное число');
+            let unit = number - parseInt(number / 10) * 10
+            let tenner = number - parseInt(number / 100) * 100 - unit
+            let hundred = number -  parseInt(number / 1000) * 1000 - tenner - unit
+            alert("new number = " + (unit * 100 + tenner + hundred / 100))
+        })
+
+
+    </script>
+</body>
+</html>
