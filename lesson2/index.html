@@ -93,6 +93,8 @@
         let swichNumber = document.getElementById('SwichNumber');
         swichNumber.addEventListener('click', function (){
             let number1 =   parseInt(prompt('Введите первое трехзначное число'));
+            //let number1 = prompt('Введите первое трехзначное число');
+            console.log(typeof number1)
             let unit1 = number1 - parseInt(number1 / 10) * 10
             let tenner1 = number1 - parseInt(number1 / 100) * 100 - unit1
 
@@ -110,6 +112,7 @@
         bullyingNumber.addEventListener('click', function (){
             let number =  prompt('Введите четырехзначное число');
             let unit = number - parseInt(number / 10) * 10
+            console.log("unit -->>" + unit)
             let tenner = number - parseInt(number / 100) * 100 - unit
             let hundred = number -  parseInt(number / 1000) * 1000 - tenner - unit
             let thousand = number - hundred - tenner - unit
