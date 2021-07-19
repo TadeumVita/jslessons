@@ -28,3 +28,9 @@ const str3 = "string not starting with capital";
 const result3 = str3.replace(str3.charAt(0), str3.charAt(0).toUpperCase())
 
 console.log(result3);
+
+
+
+a= 1
+a++
+console.log(a)

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+<body>
+    <pre>
+        Задание:
+        Используя if...else создайте сценарий, который запросит у пользователя значение и выведет на экран
+        1 если значение больше нуля
+        -1 если значение меньше нуля
+        0 если значение равно 0
+    </pre>
+    <script>
+        const value = prompt(`Please enter number:`);
+
+        let message = "";
+
+        if (isNaN(+value)){
+            message = "Not a number"
+        } else {
+            if (+value > 0) {
+                message = '1';
+            }
+            else if(+value < 0) {
+                message ='-1';
+            }
+            else{
+                message ='0';
+            }
+        }
+        alert(message)
+
+    </script>
+</body>
+</html>
