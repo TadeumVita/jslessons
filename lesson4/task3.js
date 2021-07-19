@@ -16,9 +16,9 @@ let productQuantity3 = +prompt(`Укажите количество продук
 
 let totalPrice = 0;
 
-totalPrice = totalPrice + productPrice1 * productQuantity1;
-totalPrice = totalPrice + productPrice2 * productQuantity2;
-totalPrice = totalPrice + productPrice3 * productQuantity3;
+totalPrice += productPrice1 * productQuantity1;
+totalPrice += productPrice2 * productQuantity2;
+totalPrice += productPrice3 * productQuantity3;
 ordersCount++;
 
 console.log(`Общая сумма ${totalPrice}`);
